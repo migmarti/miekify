@@ -7,7 +7,7 @@ AngularJS fue implementado para lograr los siguientes objetivos:
 
 - Para desacoplar la manipulación DOM de la lógica de la aplicación
 - Para desacoplar el lado del cliente de una aplicación desde el lado del servidor. Esto permite que el trabajo de desarrollo progrese en paralelo y permite la reutilización de ambos lados.
-- Para proporcionar la estructurar el proceso de construcción de la aplicación: desde el diseño de la interfaz de usuario, a través de la escritura de la lógica, hasta la prueba.
+- Para proporcionar la estructura MVC de la aplicación: desde el diseño de la interfaz de usuario, a través de la escritura de la lógica, hasta la prueba.
 
 Spotify API
 
@@ -27,7 +27,7 @@ En adición, otro proposito importante de Miekify recae en utilizar la funcional
 
 Amazon RDS
 
-La base de datos en utilización es SQL y está planteada en un dominio proporcionado por Amazon RDS. Cuenta con una sola tabla en donde se almacenan los identificadores de canciones junto con sus respectivos atributos de audio (mencionados anteriormente).
+La base de datos en utilización es SQL y está planteada en un dominio proporcionado por Amazon RDS. Cuenta con una sola tabla llamada SongFeatures en donde se almacenan los identificadores de canciones junto con sus respectivos atributos de audio (mencionados anteriormente).
 
 Al momento de ingresar las credenciales de una cuenta válida, se realiza una consulta insertando los identificadores de las canciones del usuario y los valores de los atributos a través del servicio Get Audio Features. El propósito de esta funcionalidad es popular la tabla con canciones que más adelante serán tomadas como recomendaciones para otros usuarios. Spotify no cuenta con un servicio para obtener todas las canciones o audios que existen en totalidad.
 
