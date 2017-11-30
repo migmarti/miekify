@@ -41,10 +41,10 @@ Con Amazon Lambda y API Gateway, es posible ejecutar codigo “sin servidor” q
 
 - Almacenamiento de canciones (/audiofeatures):  Esta función recibe un token de Spotify, el cual se utiliza para ejecutar el servicio Get Audio Features. Después, almacena los resultados (valores de los atributos más los identificadores de canciones) en la tabla SongFeatures para su posterior lectura.
 - Algoritmo analítico de recomendación (/miekify): Esta función recibe el JSON resultante del servicio Get Audio Features sobre la cuenta de un usuario y realiza las siguientes tareas:
-Extrae los atributos que se necesitan analizar (Id, Acousticness, Danceability, Energy,  Instrumentalness, Liveness, Speechiness, Valence)
-Cada valor individual es sumado a un total para cada atributo. Se implementa una colección de datos llave-valor (diccionario), donde la llave es el nombre del atributo y el valor es el total acumulado. A la misma vez, se agregan los identificadores a una lista aparte.
-Al finalizar la suma, se ordenan las llaves de acuerdo a sus valores de mayor a menor. De esta manera, se obtiene cómo será la instrucción ORDER BY en la consulta a la base de datos. La lista de identificadores construida durante el punto anterior será puesta dentro una instrucción NOT IN. 
-Se realiza un SELECT TOP X ordenado por la lista de llaves y trae resultados en donde los identificadores no se encuentran dentro de la lista construida a partir del usuario. La instrucción SELECT solo abarca la columna designada para el identificador de la canción.
+  - Extrae los atributos que se necesitan analizar (Id, Acousticness, Danceability, Energy,  Instrumentalness, Liveness, Speechiness, Valence)
+  - Cada valor individual es sumado a un total para cada atributo. Se implementa una colección de datos llave-valor (diccionario), donde la llave es el nombre del atributo y el valor es el total acumulado. A la misma vez, se agregan los identificadores a una lista aparte.
+  - Al finalizar la suma, se ordenan las llaves de acuerdo a sus valores de mayor a menor. De esta manera, se obtiene cómo será la instrucción ORDER BY en la consulta a la base de datos. La lista de identificadores construida durante el punto anterior será puesta dentro una instrucción NOT IN. 
+  - Se realiza un SELECT TOP X ordenado por la lista de llaves y trae resultados en donde los identificadores no se encuentran dentro de la lista construida a partir del usuario. La instrucción SELECT solo abarca la columna designada para el identificador de la canción.
 Regresa el resultado de la consulta como un JSON con una lista conteniendo los identificadores de canciones recomendadas.
 
 
