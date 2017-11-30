@@ -6,7 +6,7 @@ AngularJS
 AngularJS fue implementado para lograr los siguientes objetivos:
 
 - Para desacoplar la manipulación DOM de la lógica de la aplicación
-- Para desacoplar el lado del cliente de una aplicación desde el lado del servidor. Esto permite que el trabajo de desarrollo progrese en paralelo y permite la reutilización de ambos lados.
+- Para desacoplar el lado del cliente de la aplicación desde el lado del servidor. Esto permite que el trabajo de desarrollo progrese en paralelo y permite la reutilización de ambos lados.
 - Para proporcionar la estructura MVC de la aplicación: desde el diseño de la interfaz de usuario, a través de la escritura de la lógica, hasta la prueba.
 
 Spotify API
